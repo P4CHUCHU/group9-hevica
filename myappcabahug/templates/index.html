@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>HeViCa</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href={% static "app/assets/img/favicon.png"%} rel="icon">
+  <link href={% static "app/assets/img/apple-touch-icon.png"%} rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href= {% static "app/assets/vendor/animate.css/animate.min.css" %} rel="stylesheet">
+  <link href= {% static "app/assets/vendor/bootstrap/css/bootstrap.min.css" %}  rel="stylesheet">
+  <link href= {% static "app/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" %}>
+  <link href= {% static "app/assets/vendor/boxicons/css/boxicons.min.css" %} rel="stylesheet">
+  <link href= {% static "app/assets/vendor/fontawesome-free/css/all.min.css" %} rel="stylesheet">
+  <link href= {% static "app/assets/vendor/glightbox/css/glightbox.min.css" %} rel="stylesheet">
+  <link href= {% static "app/assets/vendor/remixicon/remixicon.css" %} rel="stylesheet">
+  <link href= {% static "app/assets/vendor/swiper/swiper-bundle.min.css" %} rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href={% static "app/assets/css/style.css" %} rel="stylesheet">
+
+  <!--Conference Room Sources-->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
+  <meta name="author" content="themefisher.com">
+
+  <title>Novena- Health & Care Medical template</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href={% static "app/conference/images/favicon.ico" %} />
+
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href= {% static "app/conference/plugins/bootstrap/css/bootstrap.min.css" %}>
+  <!-- Icon Font Css -->
+  <link rel="stylesheet" href="app/conference/plugins/icofont/icofont.min.css">
+  <!-- Slick Slider  CSS -->
+  <link rel="stylesheet" href={% static "app/conference/plugins/slick-carousel/slick/slick.css" %}>
+  <link rel="stylesheet" href={% static "app/conference/plugins/slick-carousel/slick/slick-theme.css" %}>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href={% static "app/conference/css/style.css" %}>
+  <link href={% static "app/assets/css/style.css" %} rel="stylesheet">
+  <!-- =======================================================
+  * Template Name: Medilab - v4.3.0
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">HeViCaReservation@gmail.com</a>
+        <i class="bi bi-phone"></i> +639 723 032 459
+    
+      </div>
+      <div class="d-none d-lg-flex social-links align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="">HeViCa</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Features</a></li>
+          <li><a class="nav-link scrollto" href="#conference">Conference Room</a></li>
+          <li><a class="nav-link scrollto" href="#testimonials">Team</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
+          
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="{% url 'my_appointment_view'%}" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make a</span> Reservation</a>
+      {% if logged_in_user %}
+    <a  class="appointment-btn scrollto"><span class="d-none d-md-inline">{{logged_in_user}}</a>
+    <a href="logout" class="appointment-btn scrollto"><span class="d-none d-md-inline">Log Out</a>
+      
+      {%else %}
+      <a href="{% url 'my_signin_view'%}" class="appointment-btn scrollto"><span class="d-none d-md-inline">Sign In</a>
+      <a href="{% url 'my_signup_view'%}" class="appointment-btn scrollto"><span class="d-none d-md-inline">Sign Up</a>
+      {% endif %}
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1>Welcome to HeViCa</h1>
+      <h2>Get your reservation ready for any doctors or executives conference meeting.</h2>
+      
+      <a href={% url 'my_dashboard_view' %} class="btn-get-started scrollto">Dashboard</a>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="content">
+              <h3>Why Choose HeViCa?</h3>
+              <p>
+                HeViCa is a Reservation System that allows hospitals to reserve conference rooms with a corporate environment and with a pleasant set-up for their meetings.
+               <p><b>Accommodating Rooms</b></p>
+                  <p>Our facility have 4 types of conference rooms; Conference, U-shape, Classroom, and Theater.
+                </p>
+              </p>
+              <div class="text-center">
+                <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 d-flex align-items-stretch">
+            <div class="icon-boxes d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-receipt"></i>
+                    <h4>Listens to you</h4>
+                    <p>You can contact the admin for any clarifications.</p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-cube-alt"></i>
+                    <h4>Pleasant in the eyes</h4>
+                    <p>We make sure that our rooms are clean and tidy, as well as appealing to the eyes of conference attendees.</p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-images"></i>
+                    <h4>Provides conference room images</h4>
+                    <p>We let you see the rooms that are available.</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
+            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
+          </div>
+
+          <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+            <h3>What is HeViCa??</h3>
+            <p>Established in 2021, HeViCa (Reservation System) contains modern designed conference rooms and have the latest models in technology to provide best experience for the meeting attendees.
+
+            <p><b>HeViCa (Reservation System)</b> provides best environment <b>for every important matters.</b>
+
+            </p>
+
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-fingerprint"></i></div>
+              <h4 class="title"><a href="">Our Goals</a></h4>
+              <p class="description">The goal of the HeViCa (Reservation System) is to provide a conference room and utilize the use of facilities while maintaining a high-quality environment for important meetings for hospital employees in which they can communicate effectively and discuss private matters.</p>
+            </div>
+
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-gift"></i></div>
+              <h4 class="title"><a href="">Our Services</a></h4>
+              <p class="description">Projectors, speakers, microphones, monitors, stadiums, and even food for customers are among the services provided.</p>
+            </div>
+
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-atom"></i></div>
+              <h4 class="title"><a href="">Our Establishments</a></h4>
+              <p class="description">We are growing our facilities and attempting to accommodate as many hospitals or clinics as possible; however, we currently only have one location where all conference room reservations can be made.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+ 
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Features</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-heartbeat"></i></div>
+              <h4><a href="">Our Commitment to Your  Safety</a></h4>
+              <p>As we navigate through the new normal, HeViCa remains committed to maintain the wellness services for safe and worry-free service to our rooms with temperature checks and air humidifier disinfectant equipments.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-pills"></i></div>
+              <h4><a href="">Rapid Testing for Faster Result</a></h4>
+              <p>Our facility provides rapid testing kits to help individuals determine their Covid test result for the pandemic protocol. After test results are in, our tool can help interpret test results faster and guide for the next steps.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-hospital-user"></i></div>
+              <h4><a href="">Arrive at the reserve room/s</a></h4>
+              <p>Bring confidents to yourself and arrive on time to your reservation. Don’t forget your mask.</p>
+            </div>
+          </div>
+
+
+           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-dna"></i></div>
+              <h4><a href="">Trusted for Testing</a></h4>
+              <p>HeViCa with DOH partnership uses of nasopharyngeal swabs to collect specimens for COVID-19 molecular diagnostic tests. Optimal specimen collection is vital for accurate test results.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-wheelchair"></i></div>
+              <h4><a href="">Customer Expectations</a></h4>
+              <p>HeViCa’s website has an entire menu dedicated to their customers to answer their needs and wants in the conference room with supporting services to cater for them.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-notes-medical"></i></div>
+              <h4><a href="">Book the Reservation</a></h4>
+              <p>Determine your eligibility and book a time slot for your chosen room types. HeViCa make you feel better than at home.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+     <!-- ======= Conference Room Section ======= -->
+     <section id="conference" class="conference">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-4 col-sm-6">
+            <div class="about-img">
+              <img src={% static "app/conference/images/about/img-1.jpg" %} alt="" class="img-fluid">
+              <img src={% static "app/conference/images/about/img-2.jpg" %} alt="" class="img-fluid mt-4">
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="about-img mt-4 mt-lg-0">
+              <img src={% static "app/conference/images/about/img-3.jpg" %} alt="" class="img-fluid">
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="about-content pl-4   mt-4 mt-lg-0">
+              <h2 class="title-color">Conference </h2>
+              <h3 class="mb-3 mt-3">Designed for Professional setting that can accomodate 10-15 pax. It can also offer a quiet environment...</h3>
+              
+              <p class="mt-4 mb-1"><ul>
+                <li>Controllable Lighting</li>
+                <li>Audio system and sound-proofing</li>
+                <li>Comfortable Spacious Room</li>
+                <li>Free Internet Connectivity</li>
+                <li>Temperature controls</li>
+                
+              </ul></p>
+    
+              <a href="{% url 'my_appointment_view'%}" class="btn btn-main-2 btn-round-full btn-icon">Book<i class="icofont-simple-right ml-3"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-4 col-sm-6">
+            <div class="about-img">
+              <img src={% static "app/conference/images/about/1.jpg" %} alt="" class="img-fluid">
+              <img src={% static "app/conference/images/about/2.jpg" %} alt="" class="img-fluid mt-4">
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="about-img mt-4 mt-lg-0">
+              <img src={% static "app/conference/images/about/3.jpg" %} alt="" class="img-fluid">
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="about-content pl-4 mt-4 mt-lg-0">
+              <h2 class="title-color">U-Shape </h2>
+              <h3 class="mb-3 mt-3">Round the edges of your U-shaped seating arrangement to get the best of both worlds: collaboration and balance.Fits up to 25 people comfortably...</h3>
+              <p class="mt-4 mb-5"><ul>
+                <li>Video Conferencing Screen Interactive Whiteboard</li>
+                <li>Presenter Moving Around Comfortably</li>
+                <li>Outlets to serve AV equipment</li>
+                
+              </ul></p></p>
+    
+              <a href="{% url 'my_appointment_view'%}" class="btn btn-main-2 btn-round-full btn-icon">Book<i class="icofont-simple-right ml-3"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section about">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-4 col-sm-6">
+            <div class="about-img">
+              <img src={% static "app/conference/images/about/4.jpg" %} alt="" class="img-fluid">
+              <img src={% static "app/conference/images/about/5.jpg" %} alt="" class="img-fluid mt-4">
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="about-img mt-4 mt-lg-0">
+              <img src={% static "app/conference/images/about/6.jpg" %} alt="" class="img-fluid">
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="about-content pl-4 mt-4 mt-lg-0">
+              <h2 class="title-color">Classroom </h2>
+              <h3 class="mb-3 mt-3">Set up classroom style, the meeting room can comfortably seat 20 people...</h3>
+              <p class="mt-4 mb-5"><ul>
+                <li>Mobile “pod” to amplify sound</li>
+                <li>Display screens</li>
+                <li>Amplifiers and recording devices</li>
+                <li>Internet access</li>
+                <li>Projector
+                </li>
+      
+              </ul></p></p>
+    
+              <a href="{% url 'my_appointment_view'%}" class="btn btn-main-2 btn-round-full btn-icon">Book<i class="icofont-simple-right ml-3"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section about">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-4 col-sm-6">
+            <div class="about-img">
+              <img src={% static "app/conference/images/about/10.jpg" %} alt="" class="img-fluid">
+              <img src={% static "app/conference/images/about/11.jpg" %} alt="" class="img-fluid mt-4">
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="about-img mt-4 mt-lg-0">
+              <img src={% static "app/conference/images/about/12.jpg" %} alt="" class="img-fluid">
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="about-content pl-4 mt-4 mt-lg-0">
+              <h2 class="title-color">Theater </h2>
+              <h3 class="mb-3 mt-3">If you have a lot of people attending your event, or space in your meeting room is tight, then a theatre layout is likely to be the best option...</h3>
+              <p class="mt-4 mb-5"><ul>
+                <li>Built-in full range speaker</li>
+                <li>A 2,500 sq. ft. room size </li>
+                <li>
+                  Projected images on a large screen 
+                  </li>
+                <li>Chairs aligned 2 inches apart</li>
+                <li>Appropriate Sound System</li>
+              </ul></p></p>
+    
+              <a href="{% url 'my_appointment_view'%}" class="btn btn-main-2 btn-round-full btn-icon">Book<i class="icofont-simple-right ml-3"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+
+        <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src={% static "app/assets/img/testimonials/testimonials-1.jpg" %} class="testimonial-img" alt="">
+                  <h3>Vir Nichael A. Cabahug</h3>
+                  <h4>Ceo &amp; Founder  &amp; Developer &amp; Designer</h4>
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    I am so proud of the team’s ability to rise to the challenge and excel on every aspect of the project. The cross-functional teamwork was amazing, and when we put the incredible talent we have together with unprecedented focus, determination and collaboration, it speaks to why the team was able to reach this outstanding achievement so quickly.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src={% static "app/assets/img/testimonials/testimonials-2.jpg"%} class="testimonial-img" alt="">
+                  <h3>Herah Fatima S. Labiaga</h3>
+                  <h4>Designer</h4>
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    My favorite aspect of this project is how everyone from all functional areas came together to execute as quickly as possible, bringing a critically needed product to market with unprecedented speed. A united front is a POWERFUL thing!
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+             
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src={% static "app/assets/img/testimonials/testimonials-3.png"%} class="testimonial-img" alt="">
+                  <h3>Ma. Carmel G. Paragoso</h3>
+                  <h4>Designer</h4>
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    My favorite aspect of this project is how everyone from all functional areas came together to execute as quickly as possible, bringing a critically needed product to market with unprecedented speed. A united front is a POWERFUL thing!
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+    
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact Us!</h2>
+          <p>Get in touch with HeViCa today and let us help you with your conference meetings. You can fill out the contact form so that we can match your inquiry with the right testing site, or you can get in touch with us through the numbers below for an initial inquiry.</p>
+        </div>
+      </div>
+
+      <div>
+        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="container">
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>40 J. Llorente St., Cebu City, Cebu, Philippines 6000</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>HeViCaReservation@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+1 5589 55488 55s</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <p>
+              40 J. Llorente St., Cebu City<br>
+              Cebu, Philippines 6000 <br><br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> HeViCaReservation@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Features</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>HeViCa brings world-class COVID-19 molecular testing closer to you. Please refer below for our current testing sites.</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>HeViCa</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
+          Designed by Vir Nichael, Cabahug; Herah Fatima, Labiaga; Paragoso, Ma. Carmel IT342 G2-C1 AY 2021 - 2022</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src={% static "app/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" %}></script>
+  <script src={% static "app/assets/vendor/glightbox/js/glightbox.min.js" %}></script>
+  <script src={% static "app/assets/vendor/php-email-form/validate.js" %}></script>
+  <script src={% static "app/assets/vendor/purecounter/purecounter.js" %}></script>
+  <script src={% static "app/assets/vendor/swiper/swiper-bundle.min.js" %}></script>
+
+  <!-- Template Main JS File -->
+  <script src={% static "app/assets/js/main.js" %}></script>
+
+</body>
+
+</html>
